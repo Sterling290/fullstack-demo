@@ -8,6 +8,7 @@ var cors = require('cors')
 const bodyparser = require("body-parser")
 const port = 3000;
 app.use(cors())
+app.use(bodyparser.urlencoded({extended:true}))
 app.use(bodyparser.json());
 app.get("/api/data",(req,res) => {
 queries.find()
