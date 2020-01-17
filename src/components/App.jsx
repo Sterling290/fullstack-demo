@@ -97,14 +97,16 @@ class App extends React.Component {
               threatLevel: <input id = "six"/><br />
               </form>
               <button onClick={() => {
-                var form = new FormData();
-                  form.append("bugName", document.getElementById("one").value)
-                  form.append("bugDescription", document.getElementById("two").value)
-                  form.append("reportedBy", document.getElementById("three").value)
-                  form.append("createdDate", document.getElementById("four").value)
-                   form.append( "assignedTo", document.getElementById("five").value)
-                  form.append("threatLevel", document.getElementById("six").value)
-                console.log(form.getAll(''))
+                // var form = new FormData().then(()=>{
+                //   form.append("bugName", document.getElementById("one").value)
+                //   form.append("bugDescription", document.getElementById("two").value)
+                //   form.append("reportedBy", document.getElementById("three").value)
+                //   form.append("createdDate", document.getElementById("four").value)
+                //    form.append( "assignedTo", document.getElementById("five").value)
+                //   form.append("threatLevel", document.getElementById("six").value)
+                // })
+           
+                //console.log(form)
                //_________________________________________________
                var obj = {
                 "bugName": document.getElementById("one").value,
@@ -115,12 +117,12 @@ class App extends React.Component {
                 "assignedTo": document.getElementById("five").value,
                 "threatLevel": document.getElementById("six").value
                }
-               //console.log(obj.json())
+               console.log(obj)
                 // form.append("json",JSON.stringify(obj))
 
                 fetch("http://localhost:3000/api/data", {
                   method: 'POST',
-                   headers: {'Content-Type':'application/x-www-form-urlencoded'}, 
+                  // headers: {'Content-Type':'application/x-www-form-urlencoded'}, 
                   headers: {
                     'Accept': 'application/json, text/plain, */*',
                     'Content-Type': 'application/json'

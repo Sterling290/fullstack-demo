@@ -20,8 +20,9 @@ queries.find()
 });
 //its in mongoose
 app.post("/api/data",(req,res) => {
+    console.log(req.body)
 queries.create(req.body)
-.then(res.send(req.body))
+.then((data)=>res.send(data))
 })
 
 app.listen(port, () => {
